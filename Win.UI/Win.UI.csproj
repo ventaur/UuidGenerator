@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <StartupObject></StartupObject>
+        <AssemblyName>$(SolutionName)</AssemblyName>
+        <AssemblyTitle>UUID Generator</AssemblyTitle>
+        <Authors>Ventaur</Authors>
+        <Copyright>Copyright © Ventaur 2022</Copyright>
+        <Version>3.0.0.0</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="RT.Comb" Version="3.0.0" />
+    </ItemGroup>
+
+</Project>
