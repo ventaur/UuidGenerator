@@ -179,6 +179,7 @@ partial class MainForm {
             this.Controls.Add(this.lblResults);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.nudCount);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "UUID Generator";
             this.Load += new System.EventHandler(this.MainForm_Load);
