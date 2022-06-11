@@ -6,7 +6,8 @@
         <Nullable>enable</Nullable>
         <UseWindowsForms>true</UseWindowsForms>
         <ImplicitUsings>enable</ImplicitUsings>
-        <StartupObject></StartupObject>
+        <PublishSingleFile>true</PublishSingleFile>
+        <RuntimeIdentifier>win-x86</RuntimeIdentifier>
         <AssemblyName>$(SolutionName)</AssemblyName>
         <AssemblyTitle>UUID Generator</AssemblyTitle>
         <Authors>Ventaur</Authors>
