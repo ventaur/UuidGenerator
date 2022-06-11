@@ -9,11 +9,14 @@ internal sealed class UuidFormat : SmartEnum<UuidFormat> {
     public static readonly UuidFormat Stripped = new UuidFormat(nameof(Stripped), 5, new StrippedUuidFormatter(), "780bfdd6239a416ebc8672671661ef67");
 
 
+    private IUuidFormatter _formatter;
+
     public string Example { get; }
-    public IUuidFormatter Formatter { get; }
 
     private UuidFormat(string name, int value, IUuidFormatter formatter, string example) : base(name, value) {
-        Formatter = formatter;
+        _formatter = formatter;
         Example = example;
     }
+
+    public string Format(Guid value) => _formatter.Format(value);
 }
