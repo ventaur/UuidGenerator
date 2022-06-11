@@ -24,6 +24,7 @@ partial class MainForm {
     ///  the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.cbFormat = new System.Windows.Forms.ComboBox();
             this.lblFormat = new System.Windows.Forms.Label();
             this.lblGenerator = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@ partial class MainForm {
             this.lblResults = new System.Windows.Forms.Label();
             this.txtResults = new System.Windows.Forms.TextBox();
             this.btnRegenerate = new System.Windows.Forms.Button();
+            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.flpGenerator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCount)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +82,7 @@ partial class MainForm {
             this.rbRandom.Size = new System.Drawing.Size(70, 19);
             this.rbRandom.TabIndex = 2;
             this.rbRandom.Text = "&Random";
+            this.ttMain.SetToolTip(this.rbRandom, "Non-sequential; entirely random");
             this.rbRandom.UseVisualStyleBackColor = true;
             this.rbRandom.CheckedChanged += new System.EventHandler(this.GeneratorRadio_CheckedChanged);
             // 
@@ -108,6 +111,7 @@ partial class MainForm {
             this.rbComb.TabIndex = 0;
             this.rbComb.TabStop = true;
             this.rbComb.Text = "Comb/&Time";
+            this.ttMain.SetToolTip(this.rbComb, "Sequential for most DBs");
             this.rbComb.UseVisualStyleBackColor = true;
             this.rbComb.CheckedChanged += new System.EventHandler(this.GeneratorRadio_CheckedChanged);
             // 
@@ -119,6 +123,7 @@ partial class MainForm {
             this.rbCombRTL.Size = new System.Drawing.Size(110, 19);
             this.rbCombRTL.TabIndex = 1;
             this.rbCombRTL.Text = "Comb/Time RT&L";
+            this.ttMain.SetToolTip(this.rbCombRTL, "Sequential for MS SQL Server");
             this.rbCombRTL.UseVisualStyleBackColor = true;
             this.rbCombRTL.CheckedChanged += new System.EventHandler(this.GeneratorRadio_CheckedChanged);
             // 
@@ -224,4 +229,5 @@ partial class MainForm {
     private TextBox txtResults;
     private Button btnRegenerate;
     private RadioButton rbCombRTL;
+    private ToolTip ttMain;
 }
