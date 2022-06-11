@@ -4,6 +4,8 @@ namespace Win.UI;
 
 public partial class MainForm : Form {
     int _maxNameWidth;
+    UuidGenerator _selectedGenerator;
+    IList<Guid> _uuids = new List<Guid>();
 
 
     public MainForm() {
@@ -30,6 +32,13 @@ public partial class MainForm : Form {
         cbFormat.DataSource = allFormats;
         cbFormat.DisplayMember = nameof(UuidFormat.Name);
         cbFormat.ValueMember = nameof(UuidFormat.Value);
+
+        rbComb.Tag = UuidGenerator.CombTime;
+        rbCombRTL.Tag = UuidGenerator.CombTimeRTL;
+        rbRandom.Tag = UuidGenerator.Random;
+        _selectedGenerator = UuidGenerator.CombTime;
+
+        GenerateUuids(true);
     }
     
     private void cbFormat_DrawItem(object sender, DrawItemEventArgs e) {
@@ -48,5 +57,44 @@ public partial class MainForm : Form {
         using var brush = new SolidBrush(e.ForeColor);
         e.Graphics.DrawString(uuidFormat.Name, e.Font ?? Font, brush, nameRect);
         e.Graphics.DrawString($":  {uuidFormat.Example}", e.Font ?? Font, brush, exampleRect);
+    }
+
+    private void nudCount_ValueChanged(object sender, EventArgs e) {
+        GenerateUuids(false);
+    }
+
+    private void GeneratorRadio_CheckedChanged(object sender, EventArgs e) {
+        var control = (Control)sender;
+        _selectedGenerator = (UuidGenerator)control.Tag;
+        GenerateUuids(true);
+    }
+
+    private void btnRegenerate_Click(object sender, EventArgs e) {
+        GenerateUuids(true);
+    }
+
+    private void GenerateUuids(bool regenerate) {
+        var count = (int)nudCount.Value;
+        
+        if (regenerate) {
+            _uuids.Clear();
+        }
+
+        if (_uuids.Count == count) return;
+
+        if (_uuids.Count > count) {
+            _uuids = new List<Guid>(_uuids.Take(count));
+            return;
+        }
+
+        for (int i = _uuids.Count; i < count; i++) {
+            _uuids.Add(_selectedGenerator.Generate());
+        }
+
+        DisplayUuids();
+    }
+
+    private void DisplayUuids() {
+        throw new NotImplementedException();
     }
 }

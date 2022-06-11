@@ -30,12 +30,12 @@ partial class MainForm {
             this.rbRandom = new System.Windows.Forms.RadioButton();
             this.flpGenerator = new System.Windows.Forms.FlowLayoutPanel();
             this.rbComb = new System.Windows.Forms.RadioButton();
+            this.rbCombRTL = new System.Windows.Forms.RadioButton();
             this.lblCount = new System.Windows.Forms.Label();
             this.nudCount = new System.Windows.Forms.NumericUpDown();
             this.lblResults = new System.Windows.Forms.Label();
             this.txtResults = new System.Windows.Forms.TextBox();
             this.btnRegenerate = new System.Windows.Forms.Button();
-            this.rbCombRTL = new System.Windows.Forms.RadioButton();
             this.flpGenerator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCount)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,7 @@ partial class MainForm {
             this.rbRandom.TabIndex = 2;
             this.rbRandom.Text = "&Random";
             this.rbRandom.UseVisualStyleBackColor = true;
+            this.rbRandom.CheckedChanged += new System.EventHandler(this.GeneratorRadio_CheckedChanged);
             // 
             // flpGenerator
             // 
@@ -99,14 +100,24 @@ partial class MainForm {
             // rbComb
             // 
             this.rbComb.AutoSize = true;
-            this.rbComb.Checked = true;
             this.rbComb.Location = new System.Drawing.Point(3, 3);
             this.rbComb.Name = "rbComb";
             this.rbComb.Size = new System.Drawing.Size(89, 19);
             this.rbComb.TabIndex = 0;
-            this.rbComb.TabStop = true;
             this.rbComb.Text = "Comb/&Time";
             this.rbComb.UseVisualStyleBackColor = true;
+            this.rbComb.CheckedChanged += new System.EventHandler(this.GeneratorRadio_CheckedChanged);
+            // 
+            // rbCombRTL
+            // 
+            this.rbCombRTL.AutoSize = true;
+            this.rbCombRTL.Location = new System.Drawing.Point(98, 3);
+            this.rbCombRTL.Name = "rbCombRTL";
+            this.rbCombRTL.Size = new System.Drawing.Size(110, 19);
+            this.rbCombRTL.TabIndex = 1;
+            this.rbCombRTL.Text = "Comb/Time RT&L";
+            this.rbCombRTL.UseVisualStyleBackColor = true;
+            this.rbCombRTL.CheckedChanged += new System.EventHandler(this.GeneratorRadio_CheckedChanged);
             // 
             // lblCount
             // 
@@ -131,6 +142,7 @@ partial class MainForm {
             0,
             0,
             0});
+            this.nudCount.ValueChanged += new System.EventHandler(this.nudCount_ValueChanged);
             // 
             // lblResults
             // 
@@ -166,17 +178,7 @@ partial class MainForm {
             this.btnRegenerate.TabIndex = 8;
             this.btnRegenerate.Text = "R&egenerate";
             this.btnRegenerate.UseVisualStyleBackColor = true;
-            // 
-            // rbCombRTL
-            // 
-            this.rbCombRTL.AutoSize = true;
-            this.rbCombRTL.Location = new System.Drawing.Point(98, 3);
-            this.rbCombRTL.Name = "rbCombRTL";
-            this.rbCombRTL.Size = new System.Drawing.Size(110, 19);
-            this.rbCombRTL.TabIndex = 1;
-            this.rbCombRTL.TabStop = true;
-            this.rbCombRTL.Text = "Comb/Time RT&L";
-            this.rbCombRTL.UseVisualStyleBackColor = true;
+            this.btnRegenerate.Click += new System.EventHandler(this.btnRegenerate_Click);
             // 
             // MainForm
             // 
