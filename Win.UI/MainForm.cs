@@ -69,6 +69,10 @@ public partial class MainForm : Form {
         GenerateUuids(true);
     }
 
+    private void cbFormat_SelectedIndexChanged(object sender, EventArgs e) {
+        DisplayUuids();
+    }
+
     private void btnRegenerate_Click(object sender, EventArgs e) {
         GenerateUuids(true);
     }
@@ -82,11 +86,13 @@ public partial class MainForm : Form {
 
         if (_uuids.Count == count) return;
 
+        // Trim the list.
         if (_uuids.Count > count) {
             _uuids = new List<Guid>(_uuids.Take(count));
             return;
         }
 
+        // Add newly-generated UUIDs to the list.
         for (int i = _uuids.Count; i < count; i++) {
             _uuids.Add(_selectedGenerator.Generate());
         }
@@ -95,6 +101,7 @@ public partial class MainForm : Form {
     }
 
     private void DisplayUuids() {
-        throw new NotImplementedException();
+        var format = (UuidFormat)cbFormat.SelectedItem;
+        txtResults.Lines = _uuids.Select(uuid => format.Format(uuid)).ToArray();
     }
 }

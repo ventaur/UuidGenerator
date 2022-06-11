@@ -51,6 +51,7 @@ partial class MainForm {
             this.cbFormat.Size = new System.Drawing.Size(429, 24);
             this.cbFormat.TabIndex = 5;
             this.cbFormat.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cbFormat_DrawItem);
+            this.cbFormat.SelectedIndexChanged += new System.EventHandler(this.cbFormat_SelectedIndexChanged);
             // 
             // lblFormat
             // 
@@ -100,10 +101,12 @@ partial class MainForm {
             // rbComb
             // 
             this.rbComb.AutoSize = true;
+            this.rbComb.Checked = true;
             this.rbComb.Location = new System.Drawing.Point(3, 3);
             this.rbComb.Name = "rbComb";
             this.rbComb.Size = new System.Drawing.Size(89, 19);
             this.rbComb.TabIndex = 0;
+            this.rbComb.TabStop = true;
             this.rbComb.Text = "Comb/&Time";
             this.rbComb.UseVisualStyleBackColor = true;
             this.rbComb.CheckedChanged += new System.EventHandler(this.GeneratorRadio_CheckedChanged);
