@@ -35,6 +35,7 @@ partial class MainForm {
             this.lblResults = new System.Windows.Forms.Label();
             this.txtResults = new System.Windows.Forms.TextBox();
             this.btnRegenerate = new System.Windows.Forms.Button();
+            this.rbCombRTL = new System.Windows.Forms.RadioButton();
             this.flpGenerator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCount)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +48,7 @@ partial class MainForm {
             this.cbFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFormat.Location = new System.Drawing.Point(12, 83);
             this.cbFormat.Name = "cbFormat";
-            this.cbFormat.Size = new System.Drawing.Size(430, 24);
+            this.cbFormat.Size = new System.Drawing.Size(429, 24);
             this.cbFormat.TabIndex = 5;
             this.cbFormat.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cbFormat_DrawItem);
             // 
@@ -73,10 +74,10 @@ partial class MainForm {
             // rbRandom
             // 
             this.rbRandom.AutoSize = true;
-            this.rbRandom.Location = new System.Drawing.Point(98, 3);
+            this.rbRandom.Location = new System.Drawing.Point(214, 3);
             this.rbRandom.Name = "rbRandom";
             this.rbRandom.Size = new System.Drawing.Size(70, 19);
-            this.rbRandom.TabIndex = 1;
+            this.rbRandom.TabIndex = 2;
             this.rbRandom.Text = "&Random";
             this.rbRandom.UseVisualStyleBackColor = true;
             // 
@@ -87,10 +88,11 @@ partial class MainForm {
             this.flpGenerator.AutoSize = true;
             this.flpGenerator.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flpGenerator.Controls.Add(this.rbComb);
+            this.flpGenerator.Controls.Add(this.rbCombRTL);
             this.flpGenerator.Controls.Add(this.rbRandom);
             this.flpGenerator.Location = new System.Drawing.Point(117, 28);
             this.flpGenerator.Name = "flpGenerator";
-            this.flpGenerator.Size = new System.Drawing.Size(171, 25);
+            this.flpGenerator.Size = new System.Drawing.Size(287, 25);
             this.flpGenerator.TabIndex = 3;
             this.flpGenerator.WrapContents = false;
             // 
@@ -103,7 +105,7 @@ partial class MainForm {
             this.rbComb.Size = new System.Drawing.Size(89, 19);
             this.rbComb.TabIndex = 0;
             this.rbComb.TabStop = true;
-            this.rbComb.Text = "&Time/Comb";
+            this.rbComb.Text = "Comb/&Time";
             this.rbComb.UseVisualStyleBackColor = true;
             // 
             // lblCount
@@ -150,14 +152,14 @@ partial class MainForm {
             this.txtResults.Name = "txtResults";
             this.txtResults.ReadOnly = true;
             this.txtResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtResults.Size = new System.Drawing.Size(430, 182);
+            this.txtResults.Size = new System.Drawing.Size(429, 175);
             this.txtResults.TabIndex = 7;
             this.txtResults.WordWrap = false;
             // 
             // btnRegenerate
             // 
             this.btnRegenerate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRegenerate.Location = new System.Drawing.Point(12, 333);
+            this.btnRegenerate.Location = new System.Drawing.Point(12, 326);
             this.btnRegenerate.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.btnRegenerate.Name = "btnRegenerate";
             this.btnRegenerate.Size = new System.Drawing.Size(75, 23);
@@ -165,11 +167,22 @@ partial class MainForm {
             this.btnRegenerate.Text = "R&egenerate";
             this.btnRegenerate.UseVisualStyleBackColor = true;
             // 
+            // rbCombRTL
+            // 
+            this.rbCombRTL.AutoSize = true;
+            this.rbCombRTL.Location = new System.Drawing.Point(98, 3);
+            this.rbCombRTL.Name = "rbCombRTL";
+            this.rbCombRTL.Size = new System.Drawing.Size(110, 19);
+            this.rbCombRTL.TabIndex = 1;
+            this.rbCombRTL.TabStop = true;
+            this.rbCombRTL.Text = "Comb/Time RT&L";
+            this.rbCombRTL.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 368);
+            this.ClientSize = new System.Drawing.Size(454, 361);
             this.Controls.Add(this.btnRegenerate);
             this.Controls.Add(this.lblGenerator);
             this.Controls.Add(this.flpGenerator);
@@ -180,6 +193,7 @@ partial class MainForm {
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.nudCount);
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(470, 0);
             this.Name = "MainForm";
             this.Text = "UUID Generator";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -204,4 +218,5 @@ partial class MainForm {
     private Label lblResults;
     private TextBox txtResults;
     private Button btnRegenerate;
+    private RadioButton rbCombRTL;
 }
