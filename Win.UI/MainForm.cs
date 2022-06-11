@@ -89,7 +89,6 @@ public partial class MainForm : Form {
         // Trim the list.
         if (_uuids.Count > count) {
             _uuids = new List<Guid>(_uuids.Take(count));
-            return;
         }
 
         // Add newly-generated UUIDs to the list.
