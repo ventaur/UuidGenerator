@@ -73,6 +73,10 @@ public partial class MainForm : Form {
         DisplayUuids();
     }
 
+    private void btnCopy_Click(object sender, EventArgs e) {
+        Clipboard.SetText(txtResults.Text);
+    }
+
     private void btnRegenerate_Click(object sender, EventArgs e) {
         GenerateUuids(true);
     }

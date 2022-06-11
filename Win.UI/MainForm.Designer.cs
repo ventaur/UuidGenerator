@@ -38,6 +38,7 @@ partial class MainForm {
             this.txtResults = new System.Windows.Forms.TextBox();
             this.btnRegenerate = new System.Windows.Forms.Button();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCopy = new System.Windows.Forms.Button();
             this.flpGenerator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCount)).BeginInit();
             this.SuspendLayout();
@@ -158,9 +159,9 @@ partial class MainForm {
             this.lblResults.Location = new System.Drawing.Point(12, 120);
             this.lblResults.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.lblResults.Name = "lblResults";
-            this.lblResults.Size = new System.Drawing.Size(44, 15);
+            this.lblResults.Size = new System.Drawing.Size(39, 15);
             this.lblResults.TabIndex = 6;
-            this.lblResults.Text = "&Results";
+            this.lblResults.Text = "&UUIDs";
             // 
             // txtResults
             // 
@@ -183,16 +184,30 @@ partial class MainForm {
             this.btnRegenerate.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.btnRegenerate.Name = "btnRegenerate";
             this.btnRegenerate.Size = new System.Drawing.Size(75, 23);
-            this.btnRegenerate.TabIndex = 8;
+            this.btnRegenerate.TabIndex = 9;
             this.btnRegenerate.Text = "R&egenerate";
             this.btnRegenerate.UseVisualStyleBackColor = true;
             this.btnRegenerate.Click += new System.EventHandler(this.btnRegenerate_Click);
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.AutoSize = true;
+            this.btnCopy.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCopy.Image = global::Win.UI.Properties.Resources.CopyHS;
+            this.btnCopy.Location = new System.Drawing.Point(57, 116);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(22, 22);
+            this.btnCopy.TabIndex = 8;
+            this.ttMain.SetToolTip(this.btnCopy, "Copy UUIDs");
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 361);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnRegenerate);
             this.Controls.Add(this.lblGenerator);
             this.Controls.Add(this.flpGenerator);
@@ -230,4 +245,5 @@ partial class MainForm {
     private Button btnRegenerate;
     private RadioButton rbCombRTL;
     private ToolTip ttMain;
+    private Button btnCopy;
 }
